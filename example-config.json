@@ -1,7 +1,7 @@
 {
 	"ssid": "wifi-ssid",
 	"pass": "wifi-password",
-	"mqtt_server": "mqtt-server",
+	"mqtt_server": 8883,
 	"mqtt_port": "server-port",
   "mqtt_user": "esp32-mqtt-user",
   "mqtt_pass": "esp32-mqtt-pasword"
