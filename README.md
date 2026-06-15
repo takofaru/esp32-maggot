@@ -74,15 +74,15 @@ You can check this [repo](https://github.com/Daorza/Maggots-for-Mobile-Computing
     ```
 3. Configure the .env
    ```env
-   MQTT_BROKER=namabroker.com
+   MQTT_BROKER=mqtt_server
    MQTT_PORT=8883
-   MQTT_USERNAME=user_anda
-   MQTT_PASSWORD=password_anda
+   MQTT_USERNAME=mqtt_user
+   MQTT_PASSWORD=mqtt_password
    
    GROQ_API_KEY=gsk_xxxxxxxxxxxx
    GROQ_MODEL=llama-3.3-70b-versatile
    
-   SECRET_KEY=kunci_rahasia_untuk_jwt_disini
+   SECRET_KEY=kjwt_key
    ```
 4. Run the backend
    ```bash
@@ -98,3 +98,4 @@ You can check this [repo](https://github.com/Daorza/Maggots-for-Mobile-Computing
    npm run dev
    ```
 8. You can access the website by check the address from the `npm run dev` command in the terminal
+It should automaticlly connect to the MQTT if you configure the .env correctly
