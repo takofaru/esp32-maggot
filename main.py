@@ -4,12 +4,13 @@ import dht
 import network
 import ujson
 import gc
+import ssl
 from umqtt.simple import MQTTClient
 
 # --- Konfigurasi Perangkat Keras ---
 LEDPIN = 32
 BUZZPIN = 33
-DHTPIN = 26
+DHTPIN = 25
 CONFIG = 'config.json'
 
 DHT = dht.DHT22(Pin(DHTPIN))
@@ -238,7 +239,11 @@ mqtt = MQTTClient(
     server=config['mqtt_server'], 
     port=config.get('mqtt_port', 1883),
     user=config.get('mqtt_user', ''),
-    password=config.get('mqtt_pass', '')
+    password=config.get('mqtt_pass', ''),
+    keepalive=60,
+    ssl=True,
+    ssl_params={"server_hostname": config['mqtt_server']}
+
 )
 mqtt.set_callback(terima_pesan)
 
